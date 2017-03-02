@@ -2,12 +2,9 @@
 title: "Developing Data Products Course: Project 1"
 author: "Sergio Contador Pachón"
 date: "2 de marzo de 2017"
+runtime: shiny
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Spanish football stadiums
 
