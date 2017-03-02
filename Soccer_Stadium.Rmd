@@ -12,7 +12,7 @@ In this project, we see a web page using R Markdown that features a map created 
 The map have markers pointing to each of the football stadiums of the 20 teams 
 that participate in 2016-2017 Santander football League of Spain.
 
-The shinny App Web <http://rmarkdown.rstudio.com>.
+To View and Interactive with Map goes to RPubs: <http://rpubs.com/karmine/DDP_Project_1>.
 
 
 ### R Markdown and Leaflet
