@@ -1,0 +1,55 @@
+---
+title: "Developing Data Products Course: Project 1"
+author: "Sergio Contador Pachón"
+date: "2 de marzo de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Spanish football stadiums
+
+In this project, we see a web page using R Markdown that features a map created with Leaflet.  
+The map have markers pointing to each of the football stadiums of the 20 teams 
+that participate in 2016-2017 Santander football League of Spain.
+
+The shinny App Web <http://rmarkdown.rstudio.com>.
+
+
+### R Markdown and Leaflet
+here are the steps followed to create the Map:  
+
+#### Load Packages
+```{r}
+library(leaflet)
+```
+
+#### Load Data
+```{r}
+dir.principal <- paste(getwd(), "/Data", sep = "")
+
+dir <- paste(dir.principal, "/Soccer_Stadium.csv", sep = "")
+data <- read.csv(dir)
+
+dir <- paste(dir.principal, "/Icons", sep = "")
+dir <- paste(dir, "/", list.files(dir), sep = "")
+icons <-  makeIcon( iconUrl = dir, 
+                    iconWidth = 31*215/230, 
+                    iconHeight = 31,
+                    iconAnchorX = 31*215/230/2, 
+                    iconAnchorY = 16)
+
+head(data)
+```
+
+#### Plot Leaflet Map 
+```{r}
+addMarkers(addTiles(leaflet()), 
+           icon = icons, 
+           popup = as.character(data$Stadium), 
+           lat = as.numeric(data$Latitude), 
+           lng = as.numeric(data$Longitude))
+```
+
